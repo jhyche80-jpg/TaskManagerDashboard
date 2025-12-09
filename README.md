@@ -1,0 +1,155 @@
+# Task Management Dashboard
+ ## Table of contents 
+  1. [Overview](#Overview)
+     1. [Features](#Features) 
+     2. [Usage](#Usage)
+  2. [Problem](#problem)     
+     1. [Problem Breakdown/ Goal](#problem-breakdown-goal)
+     2. [Questions and Answer](#questions--answers)
+     3. [Input?](#input-)
+     4. [Output?](#output-)
+     5. [Step by step Plan](#step-by-step-process-what-will-i-need-to-do)
+  3. [What I did step by step](#what-i-did-in-detail)
+  4. [Trouble Shooting ](#troubleshooting)
+  5. [Reflection](#reflection)
+  6. [References](#references)
+     1. [Programs Used ](#programs-i-used) 
+## Project Overview 
+In this assessment, you will apply the skills you have developed throughout your React training to build a functional, real-world dashboard application. This project will test your understanding of React components, state management, TypeScript integration, form handling, and component composition.
+
+
+## Problem 
+### Problem Breakdown!/ Goal
+
+1. Initialize project → install dependencies
+2. Organize folder structure
+3. Plan components & data structures
+4. Implement TypeScript interfaces
+5. Build components (TaskForm, TaskList, TaskItem, TaskFilter, Dashboard)
+6. Add utilities for filtering, sorting, validation
+7. Implement localStorage persistence
+8. Enhance UI (theme, animations, drag & drop)
+9. Test functionality & responsive layout
+10. Document & submit GitHub repo + reflection
+
+
+### Questions + Answers  
+Ex: How do I get input?
+    How do I check it’s valid?
+    How do I display something back?
+
+  1. How does a dashboard look?
+    - Display for the ammounnt of project in total, ended projects , running projects and pending projects 
+    - A week breakdown of the ammount of task  based on due dates. 
+    - reminder for a single upcoming task 
+    - a display of about 5 projects 
+    - project Progress 
+  
+  2. What can I use to make an interface for dashboard? 
+  - task
+  - categories(type of task(school,work, personal, fitness , other finance), priority, date, ) 
+  -  completion status
+  - task completion tracking that track even deleted task
+  - data interface 
+  - Filter interface 
+  - Task interface 
+  - task Props 
+  - taks list props 
+  - task form props ( get task data here! and pass it to the parent component on submit)
+  - filter Interface 
+  - chart datA inrterface
+
+  3. How shuld I structure the tabs of the dashboard?
+  - Task with all the task needed to be done
+  - taks Breakdoown 
+  - breakdown rate of task 
+  
+  4. What should I do to make the application more dashboard like ? 
+    - I think I should  have a dashboard that show task, the ammount of task and percentage of task done 
+    - I should also challenge myself and try animating a scroll bar based on the percentage of task completed and done. 
+  5. How can I make a graph on js that complies data 
+  - To use Chart.js in a TypeScript React project, you first need to install both chart.js and react-chartjs-2. In your .tsx file, you import the necessary Chart.js modules, such as CategoryScale, LinearScale, BarElement, Title, Tooltip, and Legend, and register them using ChartJS.register(), since Chart.js 3+ requires explicit registration of components. Next, you define the chart data and options, specifying labels, datasets, and configuration like responsive layout, title, and legend position, making sure to use TypeScript-friendly syntax such as as const where needed. You then render the chart using the <Bar> component from react-chartjs-2, passing the defined data and options as props. Finally, this chart component can be included in your dashboard or parent component, and the chart can be dynamically updated by populating the datasets and labels from your application state, allowing you to visualize data such as task counts or status distributions.
+### Input ?
+- Task
+- Description of the task
+- category of the task 
+- priority
+- Completion status when task is rendered 
+- deletion button 
+- filter task 
+- time
+
+### Output ??
+- Chart of data 
+- Ammount of task needed to be done 
+- the ammount of task pending 
+- the total ammount of task
+- list of every task as well. 
+- Ammount of task completed 
+- Reminder for the task closest to being over due.
+#### Optional
+- Project analytics that shows a week breakdown of projects that need to be done. 
+
+
+### Step-by-Step Process (What will I need to do)  
+The Outcome of every battle takes place in the planning phase. 
+1. Initialize Your Project
+2. Plan the project 
+  1. Decide on the components 
+   - Dashboard (partner container)
+   - taskForm( add task)
+   - Taskfilter (filter task)
+   - TaskList(displays the task)
+   - Task Item ( indivisual task)
+  2. Define data interfaces 
+  3. Plan state Managment 
+3. Create typescript Interfaces 
+4.  Build the core components and add validation 
+5.  Implementt Utilities 
+6. Add data Persisitance 
+7. Add charts 
+8. Testing 
+9. enhance the UI
+
+
+
+## What I did in detail 
+In this section you should say what you did and why and if you made refinements as well. 
+
+
+## Troubleshooting 
+    Ask: “What should happen right now?”
+    Ask: “What’s actually happening?”
+    Test your assumptions step by step.
+### Problems 
+Problems  will arise every time you code knowing the problem is key to understanding it !
+
+
+1.  
+2. 
+3. 
+4. 
+
+### Solutions
+ Finding out how to fix those problems will be important!
+
+1. 
+2. 
+3. 
+4. 
+
+## Reflection
+Sometimes there are questions to reflect on the project but if there is not , Use the area to reflect on what wass learned and how problems were fixed and handled 
+
+## References 
+- https://blog.logrocket.com/using-chart-js-react/?utm_source.com
+
+### Programs I used 
+
+
+### Websites I used
+
+
+
+
+
