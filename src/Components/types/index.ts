@@ -9,6 +9,13 @@ export interface Dashboard{
     ended:number; 
 
 }
+export interface Taskcount{
+
+TaskPending:number, 
+TaskCompleted:number,
+TaskTotal:number,
+TaskInProgress:number
+}
 export interface Task {
   id: string;
   title: string;
