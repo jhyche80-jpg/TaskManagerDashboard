@@ -141,7 +141,7 @@ to make it settle into the page ypu utilize position
 ```
 The y that I added contiols the y axis and if it is positive it will rise however if it is negative it will fall. to the positionm it is supposed to be in. 
 9. How can I use local storage in the task manager.
-- It will go whereever the main task state lives(dashboard). It will also save task everytime they change ammd load when app starts  
+- It will go whereever the main task state lives(dashboard). It will also save task everytime they change and load when app starts  
 ---
 ### Input ?
 - Task
@@ -192,6 +192,7 @@ The y that I added contiols the y axis and if it is positive it will rise howeve
 In this section you should say what you did and why and if you made refinements as well. 
 1. I made the prework for the readme before I coded a single line.
 2. I will now work to make the interfaces in type.ts 
+    - I used basically the same types as a previous project just adding one 
 3. 
 ---
 ## Troubleshooting 
