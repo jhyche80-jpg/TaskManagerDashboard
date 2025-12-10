@@ -1,19 +1,22 @@
-#Area{
-    display:flex;
+#Area {
+    display: flex;
     flex-direction: column;
-margin-top: 50px;
-justify-content: start;
-align-items: start;
-   background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
-padding:20px;
-border-radius: 20px;
-color: black;
-width: 700px;
+    margin-top: 50px;
+    justify-content: start;
+    align-items: start;
+    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+    padding: 20px;
+    border-radius: 20px;
+    color: black;
+    width: 700px;
 }
-#Input{ padding: 20px;
-    
+
+#Input {
+    padding: 20px;
+
 }
-#ShowBtn{
+
+#ShowBtn {
     font-size: medium;
     width: fit-content;
 }

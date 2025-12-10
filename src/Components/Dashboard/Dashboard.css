@@ -1,28 +1,36 @@
-.Charts{
-    display:flex;
-    flex-direction: row ;
+.Charts {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 20px;
 }
-#BarChart{
-    width: auto;
+
+#BarChart {
+   
     height: 200px;
+    margin-right: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+
+    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+}
+
+#pieChart {
+    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
     margin-right: 20px;
-    padding-left: 10px;
+    padding-left: 30px;
     padding-right: 10px;
     border-radius: 20px;
-    background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+
 }
-#pieChart{
-background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
- margin-right: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 20px;
-    
+#pieChart:hover,#BarChart:hover{
+transform: scale(1.2);
+
 }
-.list{
+
+.list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
 }

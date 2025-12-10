@@ -13,4 +13,7 @@
     font-weight: 700;
     
 }
+.divs:hover{
+    transform: scale(1.2);
+}
 
