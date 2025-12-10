@@ -1,8 +1,7 @@
 import React from 'react'
 import type { TaskListProps } from '../types'
-import { table } from 'motion/react-client'
 import { Taskitem } from '../taskItem/TaskItem'
-
+import "./taskList.css"
 export default function TaskList({ tasks, onStatusChange, onDelete }: TaskListProps) {
     return (
         <table>

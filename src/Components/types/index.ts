@@ -18,7 +18,9 @@ export interface Taskcount{
 TaskPending:number, 
 TaskCompleted:number,
 TaskTotal:number,
-TaskInProgress:number
+TaskInProgress:number,
+TaskTotalCompleted:number
+
 }
 export interface Task {
   id: string;

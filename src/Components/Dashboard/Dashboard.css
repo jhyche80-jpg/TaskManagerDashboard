@@ -1,0 +1,28 @@
+.Charts{
+    display:flex;
+    flex-direction: row ;
+    margin-bottom: 20px;
+}
+#BarChart{
+    width: auto;
+    height: 200px;
+    margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+}
+#pieChart{
+background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+ margin-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+}

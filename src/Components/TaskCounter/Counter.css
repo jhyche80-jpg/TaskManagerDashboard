@@ -1,0 +1,16 @@
+.Total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 900px;
+    margin-bottom:50px;
+}
+.divs{
+    background:linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+    padding: 20px; 
+    border-radius: 20px;
+    color: black;
+    font-weight: 700;
+    
+}
+

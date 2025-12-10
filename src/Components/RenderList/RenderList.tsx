@@ -3,7 +3,7 @@ import type { Task, TaskStatus } from "../types";
 import TaskList from "../TaskList/TaskList";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskInput from "../TaskForm/TaskForm";
-
+import "./RenderList.css"
 type RenderProps = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -31,14 +31,18 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
   });
 
   return (
-    <div>
+    <div id="Area">
       {/* Button to toggle input form */}
-      <button onClick={() => setShowInput(prev => !prev)}>
+      <button onClick={() => setShowInput(prev => !prev)} id="ShowBtn">
         {showInput ? "Cancel" : "Add Task"}
       </button>
+    <div id="Input">
 
+{showInput && <TaskInput addTask={handleAddTask} />}
+
+    </div>
       {/* Input form shows only if showInput is true */}
-      {showInput && <TaskInput addTask={handleAddTask} />}
+      
 
       <TaskFilter onFilterChange={handleFilterChange} />
       <TaskList

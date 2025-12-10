@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RenderList from '../RenderList/RenderList';
-
+import "./Dashboard.css"
 import TaskCounter from '../TaskCounter/taskCounter';
 import type { Task } from '../types';
 import { BarChart, Piechart } from '../Charts/Charts';
@@ -34,7 +34,7 @@ export default function Dashboard() {
   const totalPending = tasks.filter(t => t.status === "pending").length;
   const totalCompleted = tasks.filter(t => t.status === "completed").length;
   const totalInProgress = tasks.filter(t => t.status === "in-progress").length;
-
+  const TaskIntotal = totalCompleted+totalInProgress+ totalPending
   const taskSchool = tasks.filter(t => t.category === "school").length
   const taskWork = tasks.filter(t => t.category === "work").length
   const taskPersonal = tasks.filter(t => t.category === "personal").length
@@ -50,20 +50,24 @@ export default function Dashboard() {
   const piChartLabel = ["school",'work','personal','fitness','finance', 'other']
   const piChartValue = [taskSchool,taskWork,taskPersonal,taskFitness,taskFinance,taskOther]
   return (
-    <div>
+    <div className='list'>
       <h1>Dashboard</h1>
 
       <TaskCounter
-        TaskTotal={totalTasks}            // running total
+        TaskTotal={TaskIntotal}            // running total
         TaskCompleted={totalCompleted}    // current completed
         TaskInProgress={totalInProgress}  // current in-progress
         TaskPending={totalPending}        // current pending
+        TaskTotalCompleted={totalTasks}
       />
-      <div>
+
+      <div className='Charts'>
+      <div id='BarChart'>
         <BarChart labels={chartLabelsBar} values={chartValuesBar} />
       </div>
-      <div>
+      <div id="pieChart">
         <Piechart labels={piChartLabel} values={piChartValue}/>
+      </div> 
       </div>
       <div>
         <RenderList

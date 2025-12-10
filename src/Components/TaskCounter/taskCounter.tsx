@@ -1,21 +1,43 @@
 import React from 'react'
 import type { Taskcount } from '../types'
-
+import "./Counter.css"
 export default function TaskCounter({
- 
+
   TaskPending,
   TaskCompleted,
   TaskTotal,
-  TaskInProgress
+  TaskInProgress,
+  TaskTotalCompleted
 }: Taskcount) {
 
   return (
-    <div>
-      <h3>Task Summary</h3>
-      <p>Total Tasks: {TaskTotal}</p>
-      <p>Pending: {TaskPending}</p>
-      <p>In Progress: {TaskInProgress}</p>
-      <p>Completed: {TaskCompleted}</p>
+    <div className='Total'>
+      <div className='divs'>
+        <p>Total Tasks: </p>
+        <p>{TaskTotal}</p>
+      </div>
+      <div className='divs'>
+        <p>Pending:</p>
+      <p> {TaskPending}</p>
+
+      </div>
+      <div className='divs'>
+        <p>In Progress:</p>
+        <p>{TaskInProgress}</p>
+
+      </div>
+      <div className='divs'>
+        <p>Completed:</p>
+        <p> {TaskCompleted}</p></div>
+      <div className='divs'> 
+        <p>Total Task Completed:</p>
+        <p>{TaskTotalCompleted}</p>
+        </div>
+
+      
+      
+      
+     
     </div>
   )
 }
