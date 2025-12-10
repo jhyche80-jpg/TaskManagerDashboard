@@ -204,7 +204,7 @@ Problems  will arise every time you code knowing the problem is key to understan
 
 
 1.  In my code when i was trying to push the information from the task Items to the list I ran into a type issue which would later break the code.
-2. 
+2. The code isnt displaying anything after i attempted to add a chart to the page 
 3. 
 4. 
 ---
@@ -225,6 +225,7 @@ Problems  will arise every time you code knowing the problem is key to understan
 - https://dev.to/martinpersson/visualizing-data-in-react-a-guide-to-beautiful-charts-with-react-chartsjs-2-ifi
 - https://www.youtube.com/watch?v=9-fO_2xTpgY 
 - https://blog.logrocket.com/using-localstorage-react-hooks/  : for the local storage. 
+- https://www.chartjs.org/docs/latest/
 ---
 
 ### Programs I used 
