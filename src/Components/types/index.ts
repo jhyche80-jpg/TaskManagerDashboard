@@ -1,6 +1,7 @@
 //Task List  
 export type TaskStatus = 'pending' | 'in-progress' | 'completed';
 export type  TaskCat = 'school'|'work'|'personal'|'fitness'|'finance'|'other'
+export type TaskPrio = 'low' | 'medium' | 'high'
 export interface Dashboard{
     pending:number;
     running:number;
@@ -13,7 +14,7 @@ export interface Task {
   title: string;
   description: string;
   status: TaskStatus;
-  priority:TaskStatus;
+  priority:TaskPrio;
   dueDate: string;
   time: string;
   category:TaskCat
@@ -37,7 +38,7 @@ export interface TaskItemProps {
 export interface TaskFilterProps {
   onFilterChange: (filters: {
     status?: TaskStatus;
-    priority?: 'low' | 'medium' | 'high';
+    priority?:TaskPrio;
     category:TaskCat
   }) => void;
 }
