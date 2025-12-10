@@ -22,5 +22,6 @@ export default function TaskList({ tasks, onStatusChange, onDelete }: TaskListPr
                     />
                 ))}
         </table>
+        
     )
 }

@@ -4,10 +4,9 @@ import "./Dashboard.css"
 import TaskCounter from '../TaskCounter/taskCounter';
 import type { Task } from '../types';
 import { BarChart, Piechart } from '../Charts/Charts';
-
-
+import { motion } from "framer-motion";
 export default function Dashboard() {
-  
+
   // Load saved tasks from localStorage if available
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks");
@@ -34,23 +33,26 @@ export default function Dashboard() {
   const totalPending = tasks.filter(t => t.status === "pending").length;
   const totalCompleted = tasks.filter(t => t.status === "completed").length;
   const totalInProgress = tasks.filter(t => t.status === "in-progress").length;
-  const TaskIntotal = totalCompleted+totalInProgress+ totalPending
+  const TaskIntotal = totalCompleted + totalInProgress + totalPending
   const taskSchool = tasks.filter(t => t.category === "school").length
   const taskWork = tasks.filter(t => t.category === "work").length
   const taskPersonal = tasks.filter(t => t.category === "personal").length
   const taskFitness = tasks.filter(t => t.category === "fitness").length
   const taskFinance = tasks.filter(t => t.category === "finance").length
-  const taskOther  = tasks.filter(t => t.category === "other").length
-  
+  const taskOther = tasks.filter(t => t.category === "other").length
+
 
   // chart data  
   const chartLabelsBar = ["Pending", "In Progress", "Completed"]
   const chartValuesBar = [totalPending, totalInProgress, totalCompleted]
 
-  const piChartLabel = ["school",'work','personal','fitness','finance', 'other']
-  const piChartValue = [taskSchool,taskWork,taskPersonal,taskFitness,taskFinance,taskOther]
+  const piChartLabel = ["school", 'work', 'personal', 'fitness', 'finance', 'other']
+  const piChartValue = [taskSchool, taskWork, taskPersonal, taskFitness, taskFinance, taskOther]
   return (
-    <div className='list'>
+    <motion.div className='list'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}>
       <h1>Dashboard</h1>
 
       <TaskCounter
@@ -62,12 +64,12 @@ export default function Dashboard() {
       />
 
       <div className='Charts'>
-      <div id='BarChart'>
-        <BarChart labels={chartLabelsBar} values={chartValuesBar} />
-      </div>
-      <div id="pieChart">
-        <Piechart labels={piChartLabel} values={piChartValue}/>
-      </div> 
+        <div id='BarChart'>
+          <BarChart labels={chartLabelsBar} values={chartValuesBar} />
+        </div>
+        <div id="pieChart">
+          <Piechart labels={piChartLabel} values={piChartValue} />
+        </div>
       </div>
       <div>
         <RenderList
@@ -78,6 +80,6 @@ export default function Dashboard() {
       </div>
 
 
-    </div>
+    </motion.div>
   );
 }

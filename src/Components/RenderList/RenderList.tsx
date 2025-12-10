@@ -4,6 +4,7 @@ import TaskList from "../TaskList/TaskList";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskInput from "../TaskForm/TaskForm";
 import "./RenderList.css"
+import { motion } from "motion/react";
 type RenderProps = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -37,8 +38,13 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
         {showInput ? "Cancel" : "Add Task"}
       </button>
     <div id="Input">
+<motion.div
+initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: showInput ? 1 : 0, y: showInput ? 0 : -20 }}
+  transition={{ duration: 0.3 }}>
+  {showInput && <TaskInput addTask={handleAddTask} />}
+</motion.div>
 
-{showInput && <TaskInput addTask={handleAddTask} />}
 
     </div>
       {/* Input form shows only if showInput is true */}
