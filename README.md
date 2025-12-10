@@ -30,9 +30,17 @@ In this assessment, you will apply the skills you have developed throughout your
 5. Build components (TaskForm, TaskList, TaskItem, TaskFilter, Dashboard)
 6. Add utilities for filtering, sorting, validation
 7. Implement localStorage persistence 
-8. Enhance UI (theme, animations, drag & drop)
+8. Enhance UI 
 9. Test functionality & responsive layout
 10. Document & submit GitHub repo + reflection
+
+
+- Dashboard (Parent)
+-  ├── TaskForm   → adds tasks
+ - ├── TaskFilter → filters tasks
+ - └── TaskList
+    -   └── TaskItem → single task row/card
+
 ---
 
 ### Questions + Answers  
@@ -132,6 +140,8 @@ to make it settle into the page ypu utilize position
 <motion.div inital={{oppacity:0}} animmate= {{opacity:1,y:40}} transition={{duration: 2, y:0}}>
 ```
 The y that I added contiols the y axis and if it is positive it will rise however if it is negative it will fall. to the positionm it is supposed to be in. 
+9. How can I use local storage in the task manager.
+- It will go whereever the main task state lives(dashboard). It will also save task everytime they change ammd load when app starts  
 ---
 ### Input ?
 - Task
@@ -177,11 +187,12 @@ The y that I added contiols the y axis and if it is positive it will rise howeve
 8. Testing 
 9. enhance the UI
 
-
 ---
 ## What I did in detail 
 In this section you should say what you did and why and if you made refinements as well. 
-
+1. I made the prework for the readme before I coded a single line.
+2. I will now work to make the interfaces in type.ts 
+3. 
 ---
 ## Troubleshooting 
     Ask: “What should happen right now?”
@@ -212,6 +223,7 @@ Problems  will arise every time you code knowing the problem is key to understan
 - https://dribbble.com/shots/25241984-Task-Management-Dashboard
 - https://dev.to/martinpersson/visualizing-data-in-react-a-guide-to-beautiful-charts-with-react-chartsjs-2-ifi
 - https://www.youtube.com/watch?v=9-fO_2xTpgY 
+- https://blog.logrocket.com/using-localstorage-react-hooks/  : for the local storage. 
 ---
 
 ### Programs I used 
