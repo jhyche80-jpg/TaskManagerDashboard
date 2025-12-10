@@ -141,7 +141,7 @@ to make it settle into the page ypu utilize position
 ```
 The y that I added contiols the y axis and if it is positive it will rise however if it is negative it will fall. to the positionm it is supposed to be in. 
 9. How can I use local storage in the task manager.
-- It will go whereever the main task state lives(dashboard). It will also save task everytime they change and load when app starts  
+- It will go whereever the main task state lives(dashboard). It will also save task everytime they change andgit comm load when app starts  
 ---
 ### Input ?
 - Task
@@ -203,7 +203,7 @@ In this section you should say what you did and why and if you made refinements 
 Problems  will arise every time you code knowing the problem is key to understanding it !
 
 
-1.  
+1.  In my code when i was trying to push the information from the task Items to the list I ran into a type issue which would later break the code.
 2. 
 3. 
 4. 
@@ -211,7 +211,7 @@ Problems  will arise every time you code knowing the problem is key to understan
 ### Solutions
  Finding out how to fix those problems will be important!
 
-1. 
+1. It was in fact a type issue and it was because I imported the wrong type into the doccument at first after importing the right type the code went back to working, 
 2. 
 3. 
 4. 

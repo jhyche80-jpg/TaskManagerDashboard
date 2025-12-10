@@ -1,8 +1,8 @@
-import { div } from "motion/react-client";
+
 import type { TaskItemProps } from "../types";
 
 export function Taskitem({task,onStatusChange,onDelete}:TaskItemProps){
-    const handleStatusUpdate= (e:React.ChangeEvent<HTMLSelectElement>){
+    const handleStatusUpdate= (e:React.ChangeEvent<HTMLSelectElement>)=>{
         onStatusChange(task.id, e.target.value)
     }
     // const getColor{
@@ -32,7 +32,7 @@ export function Taskitem({task,onStatusChange,onDelete}:TaskItemProps){
                  
                  </select>{task.status}
                  </td>
-                 <td><button onClick={onDelete(task.id)}>Delete</button></td>
+                 <td><button onClick={()=>onDelete(task.id)}>Delete</button></td>
         </tr>
     )
 
