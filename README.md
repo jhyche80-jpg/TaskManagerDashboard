@@ -1,23 +1,25 @@
 # Task Management Dashboard
+
  ## Table of contents 
   1. [Overview](#Overview)
-     1. [Features](#Features) 
-     2. [Usage](#Usage)
+      1. [Features](#Features) 
+      2. [Usage](#Usage)
   2. [Problem](#problem)     
-     1. [Problem Breakdown/ Goal](#problem-breakdown-goal)
-     2. [Questions and Answer](#questions--answers)
-     3. [Input?](#input-)
-     4. [Output?](#output-)
-     5. [Step by step Plan](#step-by-step-process-what-will-i-need-to-do)
+      1. [Problem Breakdown/ Goal](#problem-breakdown-goal)
+      2. [Questions and Answer](#questions--answers)
+      3. [Input?](#input-)
+      4. [Output?](#output-)
+      5. [Step by step Plan](#step-by-step-process-what-will-i-need-to-do)
   3. [What I did step by step](#what-i-did-in-detail)
   4. [Trouble Shooting ](#troubleshooting)
   5. [Reflection](#reflection)
   6. [References](#references)
-     1. [Programs Used ](#programs-i-used) 
+      1. [Programs Used ](#programs-i-used) 
+---
 ## Project Overview 
 In this assessment, you will apply the skills you have developed throughout your React training to build a functional, real-world dashboard application. This project will test your understanding of React components, state management, TypeScript integration, form handling, and component composition.
 
-
+---
 ## Problem 
 ### Problem Breakdown!/ Goal
 
@@ -27,11 +29,11 @@ In this assessment, you will apply the skills you have developed throughout your
 4. Implement TypeScript interfaces
 5. Build components (TaskForm, TaskList, TaskItem, TaskFilter, Dashboard)
 6. Add utilities for filtering, sorting, validation
-7. Implement localStorage persistence
+7. Implement localStorage persistence 
 8. Enhance UI (theme, animations, drag & drop)
 9. Test functionality & responsive layout
 10. Document & submit GitHub repo + reflection
-
+---
 
 ### Questions + Answers  
 Ex: How do I get input?
@@ -39,36 +41,98 @@ Ex: How do I get input?
     How do I display something back?
 
   1. How does a dashboard look?
-    - Display for the ammounnt of project in total, ended projects , running projects and pending projects 
-    - A week breakdown of the ammount of task  based on due dates. 
-    - reminder for a single upcoming task 
-    - a display of about 5 projects 
-    - project Progress 
+      - Display for the ammounnt of project in total, ended projects , running projects and pending projects 
+      - A week breakdown of the ammount of task  based on due dates. 
+      - reminder for a single upcoming task 
+      - a display of about 5 projects 
+      - project Progress 
   
   2. What can I use to make an interface for dashboard? 
-  - task
-  - categories(type of task(school,work, personal, fitness , other finance), priority, date, ) 
-  -  completion status
-  - task completion tracking that track even deleted task
-  - data interface 
-  - Filter interface 
-  - Task interface 
-  - task Props 
-  - taks list props 
-  - task form props ( get task data here! and pass it to the parent component on submit)
-  - filter Interface 
-  - chart datA inrterface
+      - task
+      - categories(type of task(school,work, personal, fitness , other finance), priority, date, ) 
+      -  completion status
+      - task completion tracking that track even deleted task
+      - data interface 
+      - Filter interface 
+      - Task interface 
+      - task Props 
+      - taks list props 
+      - task form props ( get task data here! and pass it to the parent component on submit)
+      - filter Interface 
+      - chart datA inrterface
 
   3. How shuld I structure the tabs of the dashboard?
-  - Task with all the task needed to be done
-  - taks Breakdoown 
-  - breakdown rate of task 
+      - Task with all the task needed to be done
+      - taks Breakdoown 
+      - breakdown rate of task 
   
   4. What should I do to make the application more dashboard like ? 
-    - I think I should  have a dashboard that show task, the ammount of task and percentage of task done 
-    - I should also challenge myself and try animating a scroll bar based on the percentage of task completed and done. 
+        - I think I should  have a dashboard that show task, the ammount of task and percentage of task done 
+        - I should also challenge myself and try animating a scroll bar based on the percentage of task completed and done. 
   5. How can I make a graph on js that complies data 
-  - To use Chart.js in a TypeScript React project, you first need to install both chart.js and react-chartjs-2. In your .tsx file, you import the necessary Chart.js modules, such as CategoryScale, LinearScale, BarElement, Title, Tooltip, and Legend, and register them using ChartJS.register(), since Chart.js 3+ requires explicit registration of components. Next, you define the chart data and options, specifying labels, datasets, and configuration like responsive layout, title, and legend position, making sure to use TypeScript-friendly syntax such as as const where needed. You then render the chart using the <Bar> component from react-chartjs-2, passing the defined data and options as props. Finally, this chart component can be included in your dashboard or parent component, and the chart can be dynamically updated by populating the datasets and labels from your application state, allowing you to visualize data such as task counts or status distributions.
+        - To use Chart.js in a TypeScript React project, you first need to install both chart.js and react-chartjs-2. In your .tsx file, you import the necessary Chart.js modules, such as CategoryScale, LinearScale, BarElement, Title, Tooltip, and Legend, and register them using ChartJS.register(), since Chart.js 3+ requires explicit registration of components. Next, you define the chart data and options, specifying labels, datasets, and configuration like responsive layout, title, and legend position, making sure to use TypeScript-friendly syntax such as as const where needed. You then render the chart using the <Bar> component from react-chartjs-2, passing the defined data and options as props. Finally, this chart component can be included in your dashboard or parent component, and the chart can be dynamically updated by populating the datasets and labels from your application state, allowing you to visualize data such as task counts or status distributions.
+  6.  What is the util file used for ?
+        - The utils folder contains reusable helper functions such as task filtering, sorting, form validation, date formatting, and any data-processing logic that supports the components without being directly tied to the UI.
+  7. how does the functions interact with the tsx files 
+    ```ts
+export function addNumbers(a: number, b: number): number {
+  return a + b;
+}
+
+export function multiplyNumbers(a: number, b: number): number {
+  return a * b;
+}
+```
+
+- it should then go to the code like :
+```tsx
+
+import React, { useState } from "react";
+import { addNumbers, multiplyNumbers } from "../utils/mathUtils";
+
+export default function Calculator() {
+  const [result, setResult] = useState<number>(0);
+
+  const handleAdd = () => {
+    const value = addNumbers(5, 3); // calling the util function
+    setResult(value);
+  };
+
+  const handleMultiply = () => {
+    const value = multiplyNumbers(5, 3);
+    setResult(value);
+  };
+
+  return (
+    <div>
+      <h2>Calculator</h2>
+      <p>Result: {result}</p>
+
+      <button onClick={handleAdd}>Add 5 + 3</button>
+      <button onClick={handleMultiply}>Multiply 5 * 3</button>
+    </div>
+  );
+}
+```
+8. How do i use the motion package ? 
+``` npm install motion ```
+then you can import motion by 
+``` 
+import {motion} from "motion/react"
+```
+after that you can then use motion as a method like Math.floor()
+but in stead you are tying it to an element <motion.div> then to animate you set the inital prop  
+```
+<motion.div inital={{oppacity:0}} animmate= {{opacity:1}} transition={{duration: 2}}>
+```
+in the snippet above you see that initally the animation will be invisible and then go to visibile in 2 seconds ( timme is measured in seconds)
+to make it settle into the page ypu utilize position
+
+```
+<motion.div inital={{oppacity:0}} animmate= {{opacity:1,y:40}} transition={{duration: 2, y:0}}>
+```
+The y that I added contiols the y axis and if it is positive it will rise however if it is negative it will fall. to the positionm it is supposed to be in. 
+---
 ### Input ?
 - Task
 - Description of the task
@@ -78,7 +142,7 @@ Ex: How do I get input?
 - deletion button 
 - filter task 
 - time
-
+---
 ### Output ??
 - Chart of data 
 - Ammount of task needed to be done 
@@ -89,20 +153,22 @@ Ex: How do I get input?
 - Reminder for the task closest to being over due.
 #### Optional
 - Project analytics that shows a week breakdown of projects that need to be done. 
-
-
+- Add animations for maybe 
+      - when switiching slides 
+      - when you add a task 
+---
 ### Step-by-Step Process (What will I need to do)  
-The Outcome of every battle takes place in the planning phase. 
+
 1. Initialize Your Project
 2. Plan the project 
-  1. Decide on the components 
-   - Dashboard (partner container)
-   - taskForm( add task)
-   - Taskfilter (filter task)
-   - TaskList(displays the task)
-   - Task Item ( indivisual task)
-  2. Define data interfaces 
-  3. Plan state Managment 
+    1. Decide on the components 
+        - Dashboard (partner container)
+        - taskForm( add task)
+        - Taskfilter (filter task)
+        - TaskList(displays the task)
+        - Task Item ( indivisual task)
+    2. Define data interfaces 
+    3. Plan state Managment 
 3. Create typescript Interfaces 
 4.  Build the core components and add validation 
 5.  Implementt Utilities 
@@ -112,11 +178,11 @@ The Outcome of every battle takes place in the planning phase.
 9. enhance the UI
 
 
-
+---
 ## What I did in detail 
 In this section you should say what you did and why and if you made refinements as well. 
 
-
+---
 ## Troubleshooting 
     Ask: “What should happen right now?”
     Ask: “What’s actually happening?”
@@ -129,7 +195,7 @@ Problems  will arise every time you code knowing the problem is key to understan
 2. 
 3. 
 4. 
-
+---
 ### Solutions
  Finding out how to fix those problems will be important!
 
@@ -137,16 +203,23 @@ Problems  will arise every time you code knowing the problem is key to understan
 2. 
 3. 
 4. 
-
+---
 ## Reflection
-Sometimes there are questions to reflect on the project but if there is not , Use the area to reflect on what wass learned and how problems were fixed and handled 
-
+- Sometimes there are questions to reflect on the project but if there is not , Use the area to reflect on what wass learned and how problems were fixed and handled 
+---
 ## References 
 - https://blog.logrocket.com/using-chart-js-react/?utm_source.com
+- https://dribbble.com/shots/25241984-Task-Management-Dashboard
+- https://dev.to/martinpersson/visualizing-data-in-react-a-guide-to-beautiful-charts-with-react-chartsjs-2-ifi
+- https://www.youtube.com/watch?v=9-fO_2xTpgY 
+---
 
 ### Programs I used 
-
-
+- Charts.js 
+- Typescript 
+- React 
+- HTML
+---
 ### Websites I used
 
 
