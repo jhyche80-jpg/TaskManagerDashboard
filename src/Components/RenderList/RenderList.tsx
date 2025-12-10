@@ -2,6 +2,7 @@ import React from 'react'
 import type { Task,TaskStatus, TaskCat, TaskPrio } from '../types'
 import { useState } from 'react'
 import TaskList from '../TaskList/TaskList'
+import TaskFilter from '../TaskFilter/TaskFilter'
 
 export default function RenderList() {
     const [task, setTask]= useState<Task[]>([])
@@ -11,6 +12,17 @@ export default function RenderList() {
     const [priority,setPriority]= useState<TaskPrio>('low')
     const[category,setCategory]=useState<TaskCat>('personal')
     const[time,setTime]= useState('')
+    const [filters, setFilters] = useState<{
+    status?: TaskStatus
+    priority?: 'low' | 'medium' | 'high'
+  }>({})
+   const handleFilterChange = (newfilters: any) => {
+    setFilters(newfilters)
+  }
+   const handleStatusChange = (taskid: string, newStatus: TaskStatus) => {
+    setTask(prev => prev.map(task => task.id === taskid ? { ...task, status: newStatus } : task))
+
+  }
     const handleTask = ()=>{
         const newTask:Task={
             id: Date.now().toString(),
@@ -25,6 +37,11 @@ export default function RenderList() {
         }
         setTask(prev=>[...prev,newTask])
     }
+    const filteredTask = task.filter(task=>{
+        if (filters.status && task.status !== filters.status) return false
+    if (filters.priority && task.priority !== filters.priority) return false
+    return true
+    })
     const handleDelete=(taskid:string) =>{
         setTask(prev => prev.filter(task=> task.id !== taskid))
 
@@ -70,8 +87,12 @@ export default function RenderList() {
       </select>
       <button onClick={handleTask}>Add task</button>
 
-    
-    <TaskList/>
+    <TaskFilter onFilterChange={handleFilterChange}/>
+    <TaskList
+    tasks={filteredTask}
+    onStatusChange={handleStatusChange}
+    onDelete={handleDelete}
+    />
     </div>
   )
 }
