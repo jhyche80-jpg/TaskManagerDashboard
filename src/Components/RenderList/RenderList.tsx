@@ -12,21 +12,21 @@ type RenderProps = {
 };
 
 export default function RenderList({ tasks, setTasks, incrementTotal }: RenderProps) {
- const [filters, setFilters] = useState<{
-  status?: TaskStatus;
-  priority?: TaskPrio;
-  category?:TaskCat
-  search?:string
-}>({});
+  const [filters, setFilters] = useState<{
+    status?: TaskStatus;
+    priority?: TaskPrio;
+    category?: TaskCat
+    search?: string
+  }>({});
 
   const [showInput, setShowInput] = useState(false); // controls form visibility
 
-    const handleFilterChange = (newfilters: any) => {
-    setFilters(prev=> ({...prev, ...newfilters}))
+  const handleFilterChange = (newfilters: any) => {
+    setFilters(prev => ({ ...prev, ...newfilters }))
   }
 
 
-const handleDelete = (taskid: string) => {
+  const handleDelete = (taskid: string) => {
     setTasks(prev => prev.filter(task => task.id !== taskid))
   }
   const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
@@ -40,16 +40,16 @@ const handleDelete = (taskid: string) => {
 
   const filteredTasks = tasks.filter(task => {
     if (filters.status && task.status !== filters.status) return false;
-     if (filters.priority && task.priority !== filters.priority) return false
-     if(filters.category&& task.category !== filters.category)return false
-     const matchesSearch =
-    !filters.search ||
-    task.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-    task.description.toLowerCase().includes(filters.search.toLowerCase());
+    if (filters.priority && task.priority !== filters.priority) return false
+    if (filters.category && task.category !== filters.category) return false
+    const matchesSearch =
+      !filters.search ||
+      task.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+      task.description.toLowerCase().includes(filters.search.toLowerCase());
 
-  return matchesSearch 
+    return matchesSearch
 
-  
+
   });
 
   return (
@@ -58,18 +58,18 @@ const handleDelete = (taskid: string) => {
       <button onClick={() => setShowInput(prev => !prev)} id="ShowBtn">
         {showInput ? "Cancel" : "Add Task"}
       </button>
-    <div id="Input">
-<motion.div
-initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: showInput ? 1 : 0, y: showInput ? 0 : -20 }}
-  transition={{ duration: 0.3 }}>
-  {showInput && <TaskInput addTask={handleAddTask} />}
-</motion.div>
+      <div id="Input">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: showInput ? 1 : 0, y: showInput ? 0 : -20 }}
+          transition={{ duration: 0.3 }}>
+          {showInput && <TaskInput addTask={handleAddTask} />}
+        </motion.div>
 
 
-    </div>
+      </div>
       {/* Input form shows only if showInput is true */}
-      
+
 
       <TaskFilter onFilterChange={handleFilterChange} />
       <TaskList

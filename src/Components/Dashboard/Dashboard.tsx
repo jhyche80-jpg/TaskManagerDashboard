@@ -5,8 +5,12 @@ import TaskCounter from '../TaskCounter/taskCounter';
 import type { Task, TaskCat } from '../types';
 import { BarChart, Piechart } from '../Charts/Charts';
 import { motion } from "framer-motion";
-
+import { useTheme } from '../Theme/Theme';
 export default function Dashboard() {
+
+  // theme 
+  const { theme, toggleTheme } = useTheme();
+
   // Content switcher 
   const [contentType, setContentType] = useState< "task"| "home">('home')
   // Load saved tasks from localStorage if available
@@ -48,16 +52,18 @@ export default function Dashboard() {
   const chartLabelsBar = ["Pending", "In Progress", "Completed"]
   const chartValuesBar = [totalPending, totalInProgress, totalCompleted]
 
-  const piChartLabel = ["school", 'work', 'personal', 'fitness', 'finance', 'other']
+  const piChartLabel:TaskCat[] = ["school", 'work', 'personal', 'fitness', 'finance', 'other']
   const piChartValue = [taskSchool, taskWork, taskPersonal, taskFitness, taskFinance, taskOther]
   return (
 
 
     <motion.div className='list'
+
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}>
       <h1>Task Manager</h1>
+      <button onClick={toggleTheme}>{theme==="light"? 'Dark mode':'Light mode'}</button>
       <div className='Switcher'>
 
         <button className='dashButton' onClick={(() => setContentType("home"))}>Home</button>

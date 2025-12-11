@@ -12,6 +12,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import type { ChartProps } from "../types";
 import { Pie } from "react-chartjs-2";
+import { color } from "chart.js/helpers";
 
 
 ChartJS.register(
@@ -42,11 +43,33 @@ export function BarChart({ labels, values }: ChartProps) {
     responsive: true,
     plugins: {
       legend: {
-        display: true
+        display: true,
+        labels: {
+          color: "#ffffff" // make legend text white
+        }
       },
       title: {
         display: true,
-        text: "Tasks Status"
+        text: "Tasks Status",
+        color: "#ffffff" // make title text white
+      }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#ffffff" // make x-axis labels white
+        },
+        grid: {
+          color: "rgba(255, 255, 255, 0.2)" // optional: lighten grid lines
+        }
+      },
+      y: {
+        ticks: {
+          color: "#ffffff" // make y-axis labels white
+        },
+        grid: {
+          color: "rgba(255, 255, 255, 0.2)"
+        }
       }
     }
   };
@@ -63,7 +86,7 @@ export function Piechart({ labels, values }: ChartProps) {
       {
         label: "Tasks",
         data: values,
-        backgroundColor: ["red", "blue", "green","purple","yellow","grey"]
+        backgroundColor: ["red", "blue", "green", "purple", "yellow", "grey"]
       }
     ]
   };
@@ -72,11 +95,19 @@ export function Piechart({ labels, values }: ChartProps) {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom" as const
+        position: "bottom",
+        labels: {
+          color: "white" // ← Legend text color
+        }
       },
       title: {
         display: true,
-        text: "Tasks Status Pie"
+        text: "Tasks Status Pie",
+        color: "white" // ← Title text color
+      },
+      tooltip: {
+        bodyColor: "white", // ← Tooltip text
+        titleColor: "white"
       }
     }
   };

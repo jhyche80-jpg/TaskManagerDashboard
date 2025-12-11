@@ -21,6 +21,7 @@
     padding-left: 30px;
     padding-right: 10px;
     border-radius: 20px;
+   
 
 }
 #pieChart:hover,#BarChart:hover{
@@ -28,12 +29,17 @@ transform: scale(1.2);
 
 }
 
-.list {
+.list  {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+   padding-bottom: 20px; 
+   min-height: 100vh;
+  width: 100%;
 }
+   
+
 button{
     background-color: black;
 }
@@ -41,11 +47,8 @@ button{
     margin-bottom:50px;
 }
 .dashButton{
-
    padding: 20px;
-   margin-bottom: 50px;
-   
-   
+   margin-bottom: 50px; 
     
 }
 .dashButton:hover{
@@ -54,3 +57,32 @@ button{
     cursor: pointer;
 
 }
+
+.light .list {
+ background: linear-gradient(45deg,#09A1A1, #ACC0D3);
+}
+
+.dark .list {
+   background: linear-gradient(45deg,#1d1e1e, #ACC0D3);
+}
+.light button {
+  background-color: black;
+  color: white;
+}
+
+.dark button {
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+
+.light #BarChart,
+.light #pieChart {
+  background: linear-gradient(45deg,#F6C992, #f0cea4);
+}
+
+/* DARK charts */
+.dark #BarChart,
+.dark #pieChart {
+  background: linear-gradient(45deg, #333, #444);
+}
+  

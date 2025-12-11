@@ -2,6 +2,14 @@
 export type TaskStatus = 'pending' | 'in-progress' | 'completed';
 export type  TaskCat = 'school'|'work'|'personal'|'fitness'|'finance'|'other'
 export type TaskPrio = 'low' | 'medium' | 'high'
+export type LightMode = '#F6C992'|'#30525C'|'#ACC0D3'|'#09A1A1'
+export type DarkMode = '#BBBFBF'|'#878787'|'#05AD98'
+export type Theme = 'dark'|'light'
+export type ThemeContextType = {
+  theme: Theme;
+  toggleTheme: () => void;
+};
+
 export interface Dashboard{
     pending:number;
     running:number;

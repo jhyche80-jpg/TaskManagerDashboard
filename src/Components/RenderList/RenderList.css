@@ -4,13 +4,19 @@
     margin-top: 50px;
     justify-content: start;
     align-items: start;
-    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
+    
     padding: 20px;
     border-radius: 20px;
     color: black;
     width: 800px;
 }
-
+.light #Area{
+    background: linear-gradient(45deg,#F6C992, #f0cea4);
+}
+.dark #Area {
+      background: linear-gradient(45deg, #3c3939, #444);
+      color: white;
+}
 #Input {
     padding: 20px;
 
