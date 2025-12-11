@@ -29,11 +29,12 @@ export function Taskitem({ task, onStatusChange, onDelete }: TaskItemProps) {
 }
 return (
     <tr>
-        <td>{task.title}</td>
-        <td>{task.description}</td>
-        <td>{task.dueDate} at {task.time} </td>
-        <td>{task.category}</td>
-        <td >{Captilize(task.priority)}</td>
+        <td><strong> {Captilize(task.title)}</strong></td>
+        <td><strong>{Captilize(task.description)}</strong></td>
+        <td><strong>{task.dueDate} at {task.time}</strong> </td>
+        <td> <strong>{Captilize(task.category)}</strong></td>
+        <td style={{color:getColor(task.priority)}}>
+            <strong>{Captilize(task.priority)}</strong></td>
         <td>
             <select
 

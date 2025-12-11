@@ -1,15 +1,20 @@
-th {
-  padding: 12px 24px;   
-  text-align: left;     
+td{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 th, td {
   border-bottom: 2px solid #000000;
   padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
 }
+
 table {
-  border-collapse: separate; 
-  border-spacing: 0 8px;     
-  color: black;
-  color-scheme: light dark;
+  border-collapse: separate;
+  border-spacing: 0 8px;
   width: 100%;
+  table-layout: fixed;
 }
