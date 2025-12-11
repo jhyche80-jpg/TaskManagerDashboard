@@ -227,7 +227,13 @@ Problems  will arise every time you code knowing the problem is key to understan
 . 
 ---
 ## Reflection
-- Sometimes there are questions to reflect on the project but if there is not , Use the area to reflect on what wass learned and how problems were fixed and handled 
+My approach to this lab was to start with the smallest, most specific components and gradually work my way up to the broader ones. I began by building the table responsible for rendering tasks, since it acts as the foundation for how the data is displayed. Once that component worked correctly, I moved upward through each related component, ensuring that props were passed correctly and that state flowed in the right direction. This bottom-up method made it easier to isolate bugs and keep each part manageable.
+
+One of the biggest challenges I faced was getting the charts to work. This was my first time implementing chart components, so I didn’t have much prior experience to rely on. Because charts depend heavily on the data structure and how the component is configured, even a small mistake could trigger runtime errors. I had to revisit the documentation and external resources several times to understand how to shape the data and wire everything together correctly.
+
+Along the way, I also ran into several other issues. For example, my filters weren’t working at first because the filter state didn’t include all the required fields, which caused the logic to fail silently. I also struggled with animations not working the way I expected, mainly because I wasn't using AnimatePresence, so exit animations never triggered. Styling became another challenge, especially when my table unexpectedly switched to a column layout after I accidentally applied display: flex directly to the <td> elements. Fixing that required restructuring the layout and keeping flexbox inside a wrapper instead of on the table cells themselves.
+
+Overall, these problems forced me to slow down, debug more intentionally, and look deeper into how each part of React state, props, layout, and external libraries worked together. Even though it took extra time, it helped me understand the components and their interactions much more clearly. 
 ---
 ## References 
 - https://blog.logrocket.com/using-chart-js-react/?utm_source.com
