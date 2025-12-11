@@ -190,10 +190,22 @@ The y that I added contiols the y axis and if it is positive it will rise howeve
 ---
 ## What I did in detail 
 In this section you should say what you did and why and if you made refinements as well. 
-1. I made the prework for the readme before I coded a single line.
-2. I will now work to make the interfaces in type.ts 
+1. Made the prework for the readme before I coded a single line.
+2. Made the interfaces I would use 
     - I used basically the same types as a previous project just adding one 
-3. 
+3. Started at the lowest component, the TaskItem . 
+4. Made the task list which took the information in the task item and brings it into a table component 
+5. Made a render function that will take an input (later made into its own function)and then will show an output of the task displayed in the table.
+6. Made the filter for the code 
+7. I then went to the dashboard and brought the render function there
+8. In the dashboard , I made collected data on how the task based on their status.
+9.   I then edit the function in the render list to take a function of increment total so you know how many task you have or used to have. 
+10. Added another component  hat will display a chart then made a pie and bar chart that  shows charts of the information. 
+11. I then added styling to the page , adding hover state and animation to the page
+12. Made a color change to the table based on their priority and status.
+13. Added more animation to the page that will show the input as an input
+14. Added on to the filter component to bring in the categorys and separates it as well 
+15. Made a content switcher.  
 ---
 ## Troubleshooting 
     Ask: “What should happen right now?”
@@ -205,16 +217,14 @@ Problems  will arise every time you code knowing the problem is key to understan
 
 1.  In my code when i was trying to push the information from the task Items to the list I ran into a type issue which would later break the code.
 2. The code isnt displaying anything after i attempted to add a chart to the page 
-3. 
-4. 
+
 ---
 ### Solutions
  Finding out how to fix those problems will be important!
 
 1. It was in fact a type issue and it was because I imported the wrong type into the doccument at first after importing the right type the code went back to working, 
-2. 
-3. 
-4. 
+2. I once again had a mapping problem and another problem with installing the motion and charts properly
+. 
 ---
 ## Reflection
 - Sometimes there are questions to reflect on the project but if there is not , Use the area to reflect on what wass learned and how problems were fixed and handled 

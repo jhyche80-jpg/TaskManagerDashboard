@@ -61,7 +61,7 @@ export default function Dashboard() {
       <div className='Switcher'>
 
         <button className='dashButton' onClick={(() => setContentType("home"))}>Home</button>
-        <button className='dashButton' id="DashBtn2" onClick={(() => setContentType('task'))} >Add Task</button>
+        <button className='dashButton' id="DashBtn2" onClick={(() => setContentType('task'))} > Task</button>
       </div>
       {contentType=== 'home' && (<div >
         <TaskCounter
