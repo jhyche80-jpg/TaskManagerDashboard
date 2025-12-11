@@ -2,8 +2,7 @@
 export type TaskStatus = 'pending' | 'in-progress' | 'completed';
 export type  TaskCat = 'school'|'work'|'personal'|'fitness'|'finance'|'other'
 export type TaskPrio = 'low' | 'medium' | 'high'
-export type LightMode = '#F6C992'|'#30525C'|'#ACC0D3'|'#09A1A1'
-export type DarkMode = '#BBBFBF'|'#878787'|'#05AD98'
+
 export type Theme = 'dark'|'light'
 export type ThemeContextType = {
   theme: Theme;
@@ -44,7 +43,7 @@ export interface Task {
 export interface TaskListProps {
   tasks: Task[];
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
-  onDelete: (taskId: string) => string;
+  onDelete: (taskId: string) => void;
 }
 
 //Task Item 
@@ -62,4 +61,10 @@ export interface TaskFilterProps {
     priority?:TaskPrio;
     category:TaskCat
   }) => void;
+}
+export type Filters = {
+  status?: TaskStatus;
+  priority?: TaskPrio;
+  category?: TaskCat;
+  search?: string;
 }

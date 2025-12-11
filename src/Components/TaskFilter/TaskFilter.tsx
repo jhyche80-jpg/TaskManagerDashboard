@@ -14,7 +14,7 @@ export default function TaskFilter({ onFilterChange }: Props) {
     <div className="taskFilter">
       <select
         onChange={(e) =>
-          onFilterChange({ status: e.target.value || undefined })
+          onFilterChange({ status:( e.target.value as TaskStatus|| undefined) })
         }
       >
         <option value="">All Status</option>

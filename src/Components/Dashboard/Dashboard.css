@@ -3,7 +3,9 @@
     flex-direction: row;
     margin-bottom: 20px;
 }
-
+.BtnMode{
+ margin-bottom: 5px;
+}
 #BarChart {
    
     height: 200px;

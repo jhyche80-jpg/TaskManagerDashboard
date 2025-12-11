@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,7 +12,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import type { ChartProps } from "../types";
 import { Pie } from "react-chartjs-2";
-import { color } from "chart.js/helpers";
+
 
 
 ChartJS.register(
@@ -95,7 +95,7 @@ export function Piechart({ labels, values }: ChartProps) {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom",
+        position: "bottom" as const,
         labels: {
           color: "white" // ← Legend text color
         }

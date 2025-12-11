@@ -1,4 +1,4 @@
-import React from 'react'
+
 import type { Taskcount } from '../types'
 import "./Counter.css"
 export default function TaskCounter({

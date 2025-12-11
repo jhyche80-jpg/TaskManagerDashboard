@@ -5,6 +5,7 @@ import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskInput from "../TaskForm/TaskForm";
 import "./RenderList.css"
 import { motion } from "motion/react";
+import type { Filters } from "../types";
 type RenderProps = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
@@ -21,9 +22,9 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
 
   const [showInput, setShowInput] = useState(false); // controls form visibility
 
-  const handleFilterChange = (newfilters: any) => {
-    setFilters(prev => ({ ...prev, ...newfilters }))
-  }
+  const handleFilterChange = (newFilters: Partial<Filters>) => {
+  setFilters(prev => ({ ...prev, ...newFilters }))
+}
 
 
   const handleDelete = (taskid: string) => {

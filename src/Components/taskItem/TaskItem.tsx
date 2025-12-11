@@ -1,9 +1,9 @@
 
-import type { TaskItemProps } from "../types";
+import type { TaskItemProps, TaskStatus } from "../types";
 import { motion } from "motion/react";
 export function Taskitem({ task, onStatusChange, onDelete }: TaskItemProps) {
     const handleStatusUpdate = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        onStatusChange(task.id, e.target.value)
+        onStatusChange(task.id, e.target.value as TaskStatus)
     }
     const Captilize= (status:string) =>{
         return status.charAt(0).toUpperCase() + status.slice(1)

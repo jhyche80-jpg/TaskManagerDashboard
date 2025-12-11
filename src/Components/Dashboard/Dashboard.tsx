@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import RenderList from '../RenderList/RenderList';
 import "./Dashboard.css"
 import TaskCounter from '../TaskCounter/taskCounter';
@@ -63,7 +63,7 @@ export default function Dashboard() {
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}>
       <h1>Task Manager</h1>
-      <button onClick={toggleTheme}>{theme==="light"? 'Dark mode':'Light mode'}</button>
+      <button className='BtnMode' onClick={toggleTheme}>{theme==="light"? 'Dark mode':'Light mode'}</button>
       <div className='Switcher'>
 
         <button className='dashButton' onClick={(() => setContentType("home"))}>Home</button>

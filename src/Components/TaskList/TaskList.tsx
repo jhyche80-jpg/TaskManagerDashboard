@@ -1,4 +1,4 @@
-import React from 'react'
+
 import type { TaskListProps } from '../types'
 import { Taskitem } from '../taskItem/TaskItem'
 import "./taskList.css"
