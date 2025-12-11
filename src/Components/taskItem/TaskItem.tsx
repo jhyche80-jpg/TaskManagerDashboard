@@ -1,6 +1,6 @@
 
 import type { TaskItemProps } from "../types";
-
+import { motion } from "motion/react";
 export function Taskitem({ task, onStatusChange, onDelete }: TaskItemProps) {
     const handleStatusUpdate = (e: React.ChangeEvent<HTMLSelectElement>) => {
         onStatusChange(task.id, e.target.value)
@@ -28,7 +28,7 @@ export function Taskitem({ task, onStatusChange, onDelete }: TaskItemProps) {
         }
 }
 return (
-    <tr>
+    <motion.tr initial={{opacity:0,x:40}} animate = {{opacity:1,x:0}} transition={{duration: 2}} >
         <td><strong> {Captilize(task.title)}</strong></td>
         <td><strong>{Captilize(task.description)}</strong></td>
         <td><strong>{task.dueDate} at {task.time}</strong> </td>
@@ -50,7 +50,7 @@ return (
             </select>
         </td>
         <td><button onClick={() => onDelete(task.id)}>Delete</button></td>
-    </tr>
+    </motion.tr>
 )
 
 }
