@@ -16,13 +16,16 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
   status?: TaskStatus;
   priority?: TaskPrio;
   category?:TaskCat
+  search?:string
 }>({});
 
   const [showInput, setShowInput] = useState(false); // controls form visibility
 
     const handleFilterChange = (newfilters: any) => {
-    setFilters(newfilters)
+    setFilters(prev=> ({...prev, ...newfilters}))
   }
+
+
 const handleDelete = (taskid: string) => {
     setTasks(prev => prev.filter(task => task.id !== taskid))
   }
@@ -39,7 +42,13 @@ const handleDelete = (taskid: string) => {
     if (filters.status && task.status !== filters.status) return false;
      if (filters.priority && task.priority !== filters.priority) return false
      if(filters.category&& task.category !== filters.category)return false
-    return true;
+     const matchesSearch =
+    !filters.search ||
+    task.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+    task.description.toLowerCase().includes(filters.search.toLowerCase());
+
+  return matchesSearch 
+
   });
 
   return (

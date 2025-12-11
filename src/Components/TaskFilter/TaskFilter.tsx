@@ -5,6 +5,7 @@ type Props = {
     status?: TaskStatus
     priority?:TaskPrio
     category?: TaskCat
+    search?:string
   }) => void
 }
 
@@ -44,6 +45,9 @@ export default function TaskFilter({ onFilterChange }: Props) {
         <option value="finance">Finance</option>
         <option value="other">Other</option>
       </select>
+      
+      <input type="search" placeholder='Search ' 
+      onChange={(e)=> onFilterChange({search: e.target.value.trim()||undefined})}/>
     </div>
   )
 }

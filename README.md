@@ -1,5 +1,10 @@
 # Task Management Dashboard
 
+needs to be done 
+Search function
+light and dark mode 
+task reordering 
+
  ## Table of contents 
   1. [Overview](#Overview)
       1. [Features](#Features) 
