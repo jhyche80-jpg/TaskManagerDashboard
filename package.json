@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/jhyche80-jpg/TaskManagerDashboard",
+  "homepage": "https://jhyche80-jpg.github.io/TaskManagerDashboard/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
