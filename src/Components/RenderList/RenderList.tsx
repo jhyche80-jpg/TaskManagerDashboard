@@ -21,6 +21,8 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
 
   const [showInput, setShowInput] = useState(false); // controls form visibility
 
+
+
     const handleFilterChange = (newfilters: any) => {
     setFilters(prev=> ({...prev, ...newfilters}))
   }
@@ -49,6 +51,7 @@ const handleDelete = (taskid: string) => {
 
   return matchesSearch 
 
+  
   });
 
   return (
