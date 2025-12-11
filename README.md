@@ -239,6 +239,7 @@ One of the biggest challenges I faced was getting the charts to work. This was m
 Along the way, I also ran into several other issues. For example, my filters weren’t working at first because the filter state didn’t include all the required fields, which caused the logic to fail silently. I also struggled with animations not working the way I expected, mainly because I wasn't using AnimatePresence, so exit animations never triggered. Styling became another challenge, especially when my table unexpectedly switched to a column layout after I accidentally applied display: flex directly to the <td> elements. Fixing that required restructuring the layout and keeping flexbox inside a wrapper instead of on the table cells themselves.
 
 Overall, these problems forced me to slow down, debug more intentionally, and look deeper into how each part of React state, props, layout, and external libraries worked together. Even though it took extra time, it helped me understand the components and their interactions much more clearly. 
+
 ---
 ## References 
 - https://blog.logrocket.com/using-chart-js-react/?utm_source.com
