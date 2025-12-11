@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Task, TaskStatus } from "../types";
+import type { Task, TaskPrio, TaskStatus } from "../types";
 import TaskList from "../TaskList/TaskList";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskInput from "../TaskForm/TaskForm";
@@ -12,11 +12,19 @@ type RenderProps = {
 };
 
 export default function RenderList({ tasks, setTasks, incrementTotal }: RenderProps) {
-  const [filters, setFilters] = useState<{ status?: TaskStatus }>({});
+ const [filters, setFilters] = useState<{
+  status?: TaskStatus;
+  priority?: TaskPrio;
+}>({});
+
   const [showInput, setShowInput] = useState(false); // controls form visibility
 
-  const handleFilterChange = (newFilters: any) => setFilters(newFilters);
-
+    const handleFilterChange = (newfilters: any) => {
+    setFilters(newfilters)
+  }
+const handleDelete = (taskid: string) => {
+    setTasks(prev => prev.filter(task => task.id !== taskid))
+  }
   const handleStatusChange = (taskId: string, newStatus: TaskStatus) => {
     setTasks(prev => prev.map(t => (t.id === taskId ? { ...t, status: newStatus } : t)));
   };
@@ -28,6 +36,7 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
 
   const filteredTasks = tasks.filter(task => {
     if (filters.status && task.status !== filters.status) return false;
+     if (filters.priority && task.priority !== filters.priority) return false
     return true;
   });
 
@@ -54,7 +63,7 @@ initial={{ opacity: 0, y: -20 }}
       <TaskList
         tasks={filteredTasks}
         onStatusChange={handleStatusChange}
-        onDelete={id => setTasks(prev => prev.filter(t => t.id !== id))}
+        onDelete={handleDelete}
       />
     </div>
   );
