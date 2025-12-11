@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import RenderList from '../RenderList/RenderList';
 import "./Dashboard.css"
 import TaskCounter from '../TaskCounter/taskCounter';
-import type { Task } from '../types';
+import type { Task, TaskCat } from '../types';
 import { BarChart, Piechart } from '../Charts/Charts';
 import { motion } from "framer-motion";
-export default function Dashboard() {
 
+export default function Dashboard() {
+  // Content switcher 
+  const [contentType, setContentType] = useState< "task"| "home">('home')
   // Load saved tasks from localStorage if available
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem("tasks");
@@ -49,35 +51,46 @@ export default function Dashboard() {
   const piChartLabel = ["school", 'work', 'personal', 'fitness', 'finance', 'other']
   const piChartValue = [taskSchool, taskWork, taskPersonal, taskFitness, taskFinance, taskOther]
   return (
+
+
     <motion.div className='list'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}>
-      <h1>Dashboard</h1>
+      <h1>Task Manager</h1>
+      <div className='Switcher'>
 
-      <TaskCounter
-        TaskTotal={TaskIntotal}            // running total
-        TaskCompleted={totalCompleted}    // current completed
-        TaskInProgress={totalInProgress}  // current in-progress
-        TaskPending={totalPending}        // current pending
-        TaskTotalCompleted={totalTasks}
-      />
-
-      <div className='Charts'>
-        <div id='BarChart'>
-          <BarChart labels={chartLabelsBar} values={chartValuesBar} />
-        </div>
-        <div id="pieChart">
-          <Piechart labels={piChartLabel} values={piChartValue} />
-        </div>
+        <button className='dashButton' onClick={(() => setContentType("home"))}>Home</button>
+        <button className='dashButton' id="DashBtn2" onClick={(() => setContentType('task'))} >Add Task</button>
       </div>
-      <div>
+      {contentType=== 'home' && (<div >
+        <TaskCounter
+          TaskTotal={TaskIntotal}            // running total
+          TaskCompleted={totalCompleted}    // current completed
+          TaskInProgress={totalInProgress}  // current in-progress
+          TaskPending={totalPending}        // current pending
+          TaskTotalCompleted={totalTasks}
+        />
+
+        <div className='Charts'>
+          <div id='BarChart'>
+            <BarChart labels={chartLabelsBar} values={chartValuesBar} />
+          </div>
+          <div id="pieChart">
+            <Piechart labels={piChartLabel} values={piChartValue} />
+          </div>
+        </div>
+
+      </div>)}
+
+      {contentType==="task"&&
+      (<div>
         <RenderList
           tasks={tasks}
           setTasks={setTasks}
           incrementTotal={() => setTotalTasks(prev => prev + 1)} // increment running total
         />
-      </div>
+      </div>)}
 
 
     </motion.div>

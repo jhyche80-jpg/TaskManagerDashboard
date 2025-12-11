@@ -37,3 +37,19 @@ transform: scale(1.2);
 button{
     background-color: black;
 }
+.Switcher{
+    margin-bottom:50px;
+}
+.dashButton{
+
+   padding: 20px;
+   
+   
+    
+}
+.dashButton:hover{
+
+    opacity: 80%;
+    cursor: pointer;
+
+}
