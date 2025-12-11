@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { Task, TaskPrio, TaskStatus } from "../types";
+import type { Task, TaskCat, TaskPrio, TaskStatus } from "../types";
 import TaskList from "../TaskList/TaskList";
 import TaskFilter from "../TaskFilter/TaskFilter";
 import TaskInput from "../TaskForm/TaskForm";
@@ -15,6 +15,7 @@ export default function RenderList({ tasks, setTasks, incrementTotal }: RenderPr
  const [filters, setFilters] = useState<{
   status?: TaskStatus;
   priority?: TaskPrio;
+  category?:TaskCat
 }>({});
 
   const [showInput, setShowInput] = useState(false); // controls form visibility
@@ -37,6 +38,7 @@ const handleDelete = (taskid: string) => {
   const filteredTasks = tasks.filter(task => {
     if (filters.status && task.status !== filters.status) return false;
      if (filters.priority && task.priority !== filters.priority) return false
+     if(filters.category&& task.category !== filters.category)return false
     return true;
   });
 

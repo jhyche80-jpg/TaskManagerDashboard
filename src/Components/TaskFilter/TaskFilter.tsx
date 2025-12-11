@@ -1,9 +1,10 @@
-import type { TaskStatus } from '../types'
+import type { TaskCat, TaskPrio, TaskStatus } from '../types'
 
 type Props = {
   onFilterChange: (filters: {
     status?: TaskStatus
-    priority?: 'low' | 'medium' | 'high'
+    priority?:TaskPrio
+    category?: TaskCat
   }) => void
 }
 
@@ -24,7 +25,7 @@ export default function TaskFilter({ onFilterChange }: Props) {
       <select
         onChange={(e) =>
           onFilterChange({
-            priority: (e.target.value as 'low' | 'medium' | 'high') || undefined
+            priority: (e.target.value as TaskPrio) || undefined
           })
         }
       >
@@ -32,6 +33,16 @@ export default function TaskFilter({ onFilterChange }: Props) {
         <option value="low">Low</option>
         <option value="medium">Medium</option>
         <option value="high">High</option>
+      </select>
+      <select  onChange={(e) =>
+          onFilterChange({ category: e.target.value as TaskCat }) }>
+        <option value="">All Categories</option>
+        <option value="school">School</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+        <option value="fitness">Fitness</option>
+        <option value="finance">Finance</option>
+        <option value="other">Other</option>
       </select>
     </div>
   )
