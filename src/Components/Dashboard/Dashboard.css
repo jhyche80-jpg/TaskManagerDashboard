@@ -1,72 +1,65 @@
-.Charts {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
-}
-.BtnMode{
- margin-bottom: 5px;
-}
-#BarChart {
-   
-    height: 200px;
-    margin-right: 50px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 20px;
-
-    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
-}
-
-#pieChart {
-    background: linear-gradient(45deg, rgb(124, 124, 225), rgb(211, 207, 235));
-    margin-right: 20px;
-    padding-left: 30px;
-    padding-right: 10px;
-    border-radius: 20px;
-   
-
-}
-#pieChart:hover,#BarChart:hover{
-transform: scale(1.2);
-
-}
-
-.list  {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-   padding-bottom: 20px; 
-   min-height: 100vh;
+/* Container & layout */
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* prevent excess spacing */
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
   width: 100%;
 }
-   
 
-button{
-    background-color: black;
-}
-.Switcher{
-    margin-bottom:50px;
-}
-.dashButton{
-   padding: 20px;
-   margin-bottom: 50px; 
-    
-}
-.dashButton:hover{
-
-    opacity: 80%;
-    cursor: pointer;
-
+/* Charts container */
+.Charts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;       /* allows charts to wrap on smaller screens */
+  gap: 20px;             /* spacing between charts */
+  justify-content: center;
+  width: 100%;
 }
 
+/* Individual chart styling */
+.Charts > div {
+  flex: 1;
+  min-width: 250px;
+  max-width: 500px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+#BarChart:hover,
+#pieChart:hover {
+  transform: scale(1.1);
+}
+
+/* Buttons */
+.dashButton {
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.dashButton:hover {
+  opacity: 0.8;
+}
+
+.BtnMode {
+  margin-bottom: 10px;
+}
+
+/* Theme colors */
 .light .list {
- background: linear-gradient(45deg,#09A1A1, #ACC0D3);
+  background: linear-gradient(45deg, #09A1A1, #ACC0D3);
 }
 
 .dark .list {
-   background: linear-gradient(45deg,#1d1e1e, #ACC0D3);
+  background: linear-gradient(45deg, #1d1e1e, #ACC0D3);
 }
+
 .light button {
   background-color: black;
   color: white;
@@ -79,12 +72,10 @@ button{
 
 .light #BarChart,
 .light #pieChart {
-  background: linear-gradient(45deg,#F6C992, #f0cea4);
+  background: linear-gradient(45deg, #F6C992, #f0cea4);
 }
 
-/* DARK charts */
 .dark #BarChart,
 .dark #pieChart {
   background: linear-gradient(45deg, #333, #444);
 }
-  
