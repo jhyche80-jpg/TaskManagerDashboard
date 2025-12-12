@@ -1,9 +1,9 @@
 {
-  "name": "TaskManagerDashboard",
+  "name": "task-dashboard",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jhyche80-jpg.github.io/TaskManagerDashboard/",
+  "homepage": "https://github.com/jhyche80-jpg/TaskManagerDashboard",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
